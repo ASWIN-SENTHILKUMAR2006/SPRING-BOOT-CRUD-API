@@ -90,45 +90,6 @@ Or run the generated jar:
 
 The application will be available at http://localhost:8080/crudapp (unless you change the port or context path).
 
-API examples
-
-Below are example endpoints and sample curl commands. Replace {id} with an actual resource id and adjust payloads to match the entity model present in this repository.
-
-Assuming an example entity named "item" with base path /api/items:
-
-- Create
-
-    curl -X POST http://localhost:8080/crudapp/api/items \
-      -H "Content-Type: application/json" \
-      -d '{"name":"Example Item","description":"A sample"}'
-
-- Read all
-
-    curl http://localhost:8080/crudapp/api/items
-
-- Read by id
-
-    curl http://localhost:8080/crudapp/api/items/{id}
-
-- Update
-
-    curl -X PUT http://localhost:8080/crudapp/api/items/{id} \
-      -H "Content-Type: application/json" \
-      -d '{"name":"Updated","description":"Updated description"}'
-
-- Delete
-
-    curl -X DELETE http://localhost:8080/crudapp/api/items/{id}
-
-Notes
-- The exact endpoint paths, request/response payloads, and entity names depend on the code in src/. Update the examples above to match the entities present in the repository.
-- The sample application.properties above uses spring.jpa.hibernate.ddl-auto=update for development convenience. For production systems, use managed migration tools (Flyway or Liquibase) and more strict settings.
-
-Deployment
-
-- Containerization: Add a Dockerfile and compose file to run the app with MySQL for containerized deployments.
-- Cloud: The app can be deployed to any Java-supporting platform; ensure you provide the correct datasource settings for the target environment.
-
 Contributing
 
 This repository is primarily a personal learning project. Contributions or feedback are welcome — please open an issue or a pull request if you wish to suggest improvements.
